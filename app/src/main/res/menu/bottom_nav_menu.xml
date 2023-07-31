@@ -12,11 +12,5 @@
         android:id="@+id/bottom_reminder"
         android:icon="@drawable/notification"
         android:title="Reminder" />
-    <item
-        android:id="@+id/bottom_bot"
-        android:icon="@drawable/bot"
-        android:title="Partner" />
-
-
 
 </menu>

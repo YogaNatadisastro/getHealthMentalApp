@@ -47,10 +47,6 @@ public class ProfileActivity extends AppCompatActivity {
                     startActivity(new Intent(ProfileActivity.this, AlarmActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     return true;
-                case R.id.bottom_bot:
-                    startActivity(new Intent(ProfileActivity.this, ChatBotActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
             }
             return false;
         });

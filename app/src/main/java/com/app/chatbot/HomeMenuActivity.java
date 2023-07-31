@@ -10,8 +10,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeMenuActivity extends AppCompatActivity {
 
-    Intent intent1, intent2, intent3, intent4;
-    Button btn1, btn2, btn3, btn4;
+    Intent intent1, intent2, intent3, intent4, intent5;
+    Button btn1, btn2, btn3, btn4, btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,15 @@ public class HomeMenuActivity extends AppCompatActivity {
         btn3 = findViewById(R.id.btnDiary);
         btn3.setOnClickListener(view -> startActivity(intent3));
 
-
         intent4 = new Intent(HomeMenuActivity.this, UrApotekActivity.class);
         btn4 = findViewById(R.id.btnApotek);
         btn4.setOnClickListener(view -> startActivity(intent4));
+
+        intent5 = new Intent(HomeMenuActivity.this, ChatBotActivity.class);
+        btn5 = findViewById(R.id.btnChatBot);
+        btn5.setOnClickListener(view -> startActivity(intent5));
+
+
 
 
 
@@ -52,10 +57,7 @@ public class HomeMenuActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeMenuActivity.this, AlarmActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     return true;
-                case R.id.bottom_bot:
-                    startActivity(new Intent(HomeMenuActivity.this, ChatBotActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
+
             }
             return false;
         });

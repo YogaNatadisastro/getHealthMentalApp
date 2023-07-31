@@ -40,10 +40,6 @@ public class AlarmActivity extends AppCompatActivity {
                     return true;
                 case R.id.bottom_reminder:
                     return true;
-                case R.id.bottom_bot:
-                    startActivity(new Intent(AlarmActivity.this, ChatBotActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
             }
             return false;
         });

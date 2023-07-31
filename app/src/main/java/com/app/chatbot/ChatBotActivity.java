@@ -46,28 +46,6 @@ public class ChatBotActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_bot);
-
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.bottom_home:
-                    startActivity(new Intent(ChatBotActivity.this, HomeMenuActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
-                case R.id.bottom_user:
-                    startActivity(new Intent(ChatBotActivity.this, ProfileActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
-                case R.id.bottom_reminder:
-                    startActivity(new Intent(ChatBotActivity.this, AlarmActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    return true;
-                case R.id.bottom_bot:
-                    return true;
-            }
-            return false;
-        });
 
 
         messageList = new ArrayList<>();
