@@ -96,9 +96,5 @@ public class DetailChatActivity extends AppCompatActivity {
             referenceReceiver.child(chatId).setValue(chat);
 
         });
-
-        infoBtn.setOnClickListener(view ->
-                startActivity(new Intent(DetailChatActivity.this, ProfileDoctorActivity.class))
-        );
     }
 }
