@@ -8,7 +8,6 @@ public class Diary {
     String content;
     Timestamp timestamp;
 
-
     public Diary() {
     }
 

@@ -4,13 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.chatbot.Adapter.ChatDetailAdapter;
@@ -23,7 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 
 
 public class DetailChatActivity extends AppCompatActivity {
@@ -32,7 +28,6 @@ public class DetailChatActivity extends AppCompatActivity {
     String namaDoc;
     EditText chatEditText;
     Button sendBtn;
-    ImageView infoBtn;
     RecyclerView rvChat;
     ChatDetailAdapter detailChatAdapter;
     DatabaseReference referenceSender, referenceReceiver;
