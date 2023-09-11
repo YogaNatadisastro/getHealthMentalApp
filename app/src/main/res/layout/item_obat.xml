@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
+    android:background="@drawable/rounded_item_obat"
+    android:layout_marginBottom="20dp"
     android:orientation="horizontal">
 
     <ImageView
@@ -18,7 +20,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:id="@+id/tvObat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +30,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:id="@+id/tvAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

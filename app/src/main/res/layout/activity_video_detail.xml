@@ -5,16 +5,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_first"
+    android:background="@drawable/newbg"
     tools:context=".VideoDetailActivity">
+
+    <TextView
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/text_rounded"
+        android:gravity="center"
+        android:text="Watch Ur Video"
+        android:textColor="#FFE976"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/videoView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_marginTop="135dp"
+        android:layout_width="378dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="132dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +38,6 @@
         android:layout_width="272dp"
         android:layout_height="50dp"
         android:paddingStart="20dp"
-        android:textAlignment="center"
         android:text="Video Strawberry"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +45,14 @@
 
     <TextView
         android:id="@+id/tvWaktu"
-        android:layout_width="136dp"
-        android:layout_height="50dp"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
+        android:gravity="right"
         android:text="2 : 30"
-        android:textAlignment="center"
         android:textSize="25dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tvName"
         app:layout_constraintTop_toBottomOf="@+id/videoView" />
 

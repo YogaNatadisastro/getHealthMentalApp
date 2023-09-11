@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_first"
+    android:background="@drawable/fixbg"
     tools:context=".VideoMoodActivity">
 
     <TextView
-        android:textColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="204dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/text_rounded"
         android:text="Video Lucu"
         android:textAlignment="center"
+        android:textColor="#FFE976"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,13 +22,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="660dp"
-        android:layout_marginTop="172dp"
-        android:padding="5dp"
+        android:layout_width="505dp"
+        android:layout_height="714dp"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvVid"

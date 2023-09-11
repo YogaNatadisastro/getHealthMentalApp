@@ -27,11 +27,9 @@ public class DiaryActivity extends AppCompatActivity {
 
         addNoteBtn = findViewById(R.id.add_note_btn);
         recyclerView = findViewById(R.id.recycler_view);
-        menuBtn = findViewById(R.id.menu_btn);
 
 
         addNoteBtn.setOnClickListener((v)-> startActivity(new Intent(DiaryActivity.this, DetailDiaryActivity.class)));
-        menuBtn.setOnClickListener((v)-> showMenu());
         setupRecyclerView();
     }
 

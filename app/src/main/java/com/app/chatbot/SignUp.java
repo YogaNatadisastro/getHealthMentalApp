@@ -57,7 +57,7 @@ public class SignUp extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         btnSignUp = findViewById(R.id.btn_sign);
         progressBar = findViewById(R.id.progressBar);
-        textView = findViewById(R.id.loginNow);
+        textView = findViewById(R.id.login);
 
         textView.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), Login_user.class);

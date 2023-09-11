@@ -10,7 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#CA92C7"
         android:padding="8dp"
         android:layout_marginEnd="80dp"
         >
@@ -33,7 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#AFDDD9"
         android:padding="8dp"
         android:layout_marginStart="80dp">
 
