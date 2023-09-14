@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.chatbot.Model.UserDetails;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,11 +21,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Field;
+
 public class ProfileActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     Button button;
-    TextView tvName, tvEmail, tvDate;
+    ImageView profile;
+    TextView tvName, tvEmail, tvGender;
     FirebaseUser user;
     FirebaseDatabase fData;
     DatabaseReference dReference;
@@ -57,6 +63,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         button = findViewById(R.id.logout1);
         tvName = findViewById(R.id.nameProfile1);
+        tvGender = findViewById(R.id.tvGender);
+        profile = findViewById(R.id.imgProfile);
         tvEmail = findViewById(R.id.emailProfile1);
         user = auth.getCurrentUser();
         
@@ -83,15 +91,27 @@ public class ProfileActivity extends AppCompatActivity {
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserDetails uDetail = snapshot.getValue(UserDetails.class);
+                  UserDetails uDetail = snapshot.getValue(UserDetails.class);
                 if (uDetail != null){
                     String test = uDetail.getUserName();
+                    String gender = uDetail.getGender();
                     tvName.setText(test);
+                    tvGender.setText(gender);
+
+                    if (gender.equals("male")) {
+                        profile.setImageResource(R.drawable.docman);
+                    } else {
+                        profile.setImageResource(R.drawable.docwomen);
+                    }
+
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+            public void getGenderProfile(TextView tvName) {
 
             }
         });

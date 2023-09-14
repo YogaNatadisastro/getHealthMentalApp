@@ -1,20 +1,27 @@
 package com.app.chatbot.Model;
 
+import android.widget.ImageView;
+
 public class UserDetails {
 
-    private String userId, userName, userEmail, userPassword, role;
+    private String userId, userName, userEmail, userPassword, role, gender;
+
+    private ImageView jenisGender;
 
     public UserDetails(){
 
     }
 
-    public UserDetails(String userId, String userName, String userEmail, String userPassword, String role){
+
+    public UserDetails(String userId, String userName, String userEmail, String userPassword, String role, String gender){
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
         this.role = role;
+        this.gender = gender;
     }
+
 
     public String getUserId() {
         return userId;
@@ -54,5 +61,21 @@ public class UserDetails {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public ImageView getJenisGender() {
+        return jenisGender;
+    }
+
+    public void setJenisGender(ImageView jenisGender) {
+        this.jenisGender = jenisGender;
     }
 }

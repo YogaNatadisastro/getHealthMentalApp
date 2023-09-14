@@ -65,8 +65,10 @@
                     <Button
                         android:id="@+id/btnUrShine"
                         android:layout_width="match_parent"
+                        android:backgroundTint="#FFE976"
                         android:layout_height="40dp"
                         android:text="UR SHINE"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:backgroundTint="#254965" />
 
@@ -106,7 +108,9 @@
                         android:id="@+id/btnApotek"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:backgroundTint="#FFE976"
                         android:text="UR APOTEK"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:backgroundTint="#254965" />
 
@@ -152,7 +156,9 @@
                         android:id="@+id/btnChatBot"
                         android:layout_width="match_parent"
                         android:layout_height="37dp"
+                        android:backgroundTint="#FFE976"
                         android:text="UR PARTNER"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:backgroundTint="#254965" />
 
@@ -206,7 +212,9 @@
                         android:id="@+id/btnUrMovie"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:backgroundTint="#FFE976"
                         android:text="UR MOVIE"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:backgroundTint="#254965" />
 
@@ -243,7 +251,9 @@
                         android:id="@+id/btnDiary"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:backgroundTint="#FFE976"
                         android:text="UR DIARY"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:backgroundTint="#254965" />
 

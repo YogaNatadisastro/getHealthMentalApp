@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +29,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUp extends AppCompatActivity {
 
     Button btnSignUp;
+    String textGender;
     private TextInputEditText editTextEmail, editTextPassword, editTextNama;
     private ProgressBar progressBar;
+    private RadioGroup radioGroupGender;
+    private RadioButton radioButtonSelected;
     FirebaseAuth mAuth;
     TextView textView;
     private static final String TAG = "SignUpActivity";
@@ -58,6 +63,8 @@ public class SignUp extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btn_sign);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.login);
+        radioGroupGender = findViewById(R.id.radio_group_register_gender);
+        radioGroupGender.clearCheck();
 
         textView.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), Login_user.class);
@@ -67,6 +74,10 @@ public class SignUp extends AppCompatActivity {
 
         btnSignUp.setOnClickListener(v -> {
             progressBar.setVisibility(View.VISIBLE);
+
+            int selectedGenderId = radioGroupGender.getCheckedRadioButtonId();
+            radioButtonSelected = findViewById(selectedGenderId);
+
             String email, password, nama;
 
             nama = String.valueOf(editTextNama.getText());
@@ -82,14 +93,19 @@ public class SignUp extends AppCompatActivity {
             } else if (TextUtils.isEmpty(email)) {
                 Toast.makeText(SignUp.this, "Enter Email", Toast.LENGTH_LONG).show();
                 editTextEmail.requestFocus();
+            } else if (radioGroupGender.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(SignUp.this, "Please select your gender", Toast.LENGTH_SHORT).show();
+                radioButtonSelected.setError("Gender is required");
+                radioButtonSelected.requestFocus();
             } else {
+                textGender = radioButtonSelected.getText().toString();
                 progressBar.setVisibility(View.VISIBLE);
-                registerUser(nama, email, password);
+                registerUser(nama, email, password, textGender);
             }
     });
 }
 
-    private void registerUser(String nama, String email, String password) {
+    private void registerUser(String nama, String email, String password, String textGender) {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -101,7 +117,9 @@ public class SignUp extends AppCompatActivity {
                 String uid = fUser.getUid();
                 String role = "user";
 
-                UserDetails userDetails = new UserDetails(uid, nama, email, password, role);
+
+                //enter user data into realtime firebase
+                UserDetails userDetails = new UserDetails(uid, nama, email, password, role, textGender);
 
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
